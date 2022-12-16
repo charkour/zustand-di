@@ -1,0 +1,22 @@
+{
+  "name": "spritz",
+  "version": "0.0.1",
+  "description": "initalize zustand stores with react context",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zustand",
+    "react",
+    "context",
+    "dependency-injection"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "react": "^18.2.0",
+    "zustand": "^4.1.5"
+  }
+}
