@@ -11,7 +11,10 @@ type ExtractState<Store> = Store extends { getState: () => infer T }
   : never;
 
 // Inspired from: https://github.com/pmndrs/zustand/blob/main/src/context.ts
-export const createContext = <Store extends StoreApi<unknown>>() => {
+export const createContext = <
+  State,
+  Store extends StoreApi<State> = StoreApi<State>
+>() => {
   const StoreContext = createReactContext<Store | undefined>(undefined);
 
   const Provider: React.FC<{
@@ -29,7 +32,7 @@ export const createContext = <Store extends StoreApi<unknown>>() => {
     const store = useContext(StoreContext);
     if (!store) {
       throw new Error(
-        'Seems like you have not used zustand provider as an ancestor'
+        "Seems like you have not used zustand provider as an ancestor"
       );
     }
     return useZustandStore(store, selector, equalityFn);
