@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup",
-    "dev": "vitest --watch"
+    "dev": "vitest --watch",
+    "size": "size-limit"
   },
   "keywords": [
     "zustand",
@@ -22,10 +23,18 @@
     "zustand": "^4.1.5"
   },
   "devDependencies": {
+    "@size-limit/preset-small-lib": "8.1.0",
     "@types/react": "18.0.26",
     "react": "18.2.0",
+    "size-limit": "8.1.0",
     "tsup": "6.5.0",
     "typescript": "4.9.4",
     "zustand": "4.1.5"
-  }
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "1 kB"
+    }
+  ]
 }
