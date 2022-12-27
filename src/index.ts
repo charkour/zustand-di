@@ -29,7 +29,7 @@ export const createContext = <Store extends StoreApi<unknown>>() => {
     const store = useContext(StoreContext);
     if (!store) {
       throw new Error(
-        "Seems like you have not used zustand provider as an ancestor"
+        'Seems like you have not used zustand provider as an ancestor'
       );
     }
     return useZustandStore(store, selector, equalityFn);
