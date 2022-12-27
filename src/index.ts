@@ -1,4 +1,4 @@
-import React, { createContext as createReactContext, useContext, useRef } from 'react';
+import { createContext as createReactContext, useContext, useRef, createElement } from 'react';
 import { StoreApi, useStore as useZustandStore } from 'zustand';
 
 export const createContext = <State, Store extends StoreApi<State> = StoreApi<State>>() => {
@@ -19,7 +19,7 @@ export const createContext = <State, Store extends StoreApi<State> = StoreApi<St
         children,
     }) => {
         const store = useRef(createStore()).current;
-        return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>;
+        return createElement(StoreContext.Provider, { value: store }, children);
     };
     return {
         Provider,
