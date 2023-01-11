@@ -1,6 +1,6 @@
 # zustand-di
 
-zustand + react content to init stores
+use react props to init zustand stores
 
 A simplified patch of [`createContext`](https://github.com/pmndrs/zustand/blob/main/src/context.ts) from `zustand/context` that might be deprecated in the future. This patch removes `useStoreApi`.
 
