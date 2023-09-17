@@ -3,7 +3,7 @@
   "version": "0.0.6",
   "description": "initialize zustand stores with react context",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
     "build": "tsup",
     "dev": "vitest --watch",
     "size": "size-limit"
@@ -24,17 +24,21 @@
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "9.0.0",
+    "@testing-library/react": "14.0.0",
     "@types/react": "18.2.21",
+    "@vitest/ui": "0.34.4",
+    "jsdom": "22.1.0",
     "react": "18.2.0",
     "size-limit": "9.0.0",
     "tsup": "7.2.0",
     "typescript": "5.2.2",
+    "vitest": "0.34.4",
     "zustand": "4.4.1"
   },
   "size-limit": [
     {
       "path": "dist/index.js",
-      "limit": "1 kB"
+      "limit": "800 B"
     }
   ]
 }
