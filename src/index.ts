@@ -1,31 +1,36 @@
 import {
-  createContext as createReactContext,
+  createElement,
+  createContext as reactCreateContext,
   useContext,
   useRef,
-  createElement,
 } from "react";
-import { type StoreApi, useStore as useZustandStore } from "zustand";
+import type { StoreApi } from "zustand";
+import { useStoreWithEqualityFn } from "zustand/traditional";
 
 type ExtractState<Store> = Store extends { getState: () => infer T }
   ? T
   : never;
 
 // Inspired from: https://github.com/pmndrs/zustand/blob/main/src/context.ts
-export const createContext = <
-  State,
-  Store extends StoreApi<State> = StoreApi<State>
->() => {
-  const StoreContext = createReactContext<Store | undefined>(undefined);
+export const createContext = <Store extends StoreApi<unknown>>() => {
+  const StoreContext = reactCreateContext<Store | undefined>(undefined);
 
-  const Provider: React.FC<{
+  const Provider = ({
+    createStore,
+    children,
+  }: {
     createStore: () => Store;
-    children?: React.ReactNode;
-  }> = ({ createStore, children }) => {
+    children: React.ReactNode;
+  }) => {
     const storeRef = useRef<Store>();
     if (!storeRef.current) {
       storeRef.current = createStore();
     }
-    return createElement(StoreContext.Provider, { value: storeRef.current }, children);
+    return createElement(
+      StoreContext.Provider,
+      { value: storeRef.current },
+      children
+    );
   };
 
   const useStore = <StateSlice = ExtractState<Store>>(
@@ -35,10 +40,10 @@ export const createContext = <
     const store = useContext(StoreContext);
     if (!store) {
       throw new Error(
-        "Seems like you have not used zustand provider as an ancestor"
+        "Seems like you have not used zustand provider as an ancestor."
       );
     }
-    return useZustandStore(store, selector, equalityFn);
+    return useStoreWithEqualityFn(store, selector, equalityFn);
   };
 
   return {

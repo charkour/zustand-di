@@ -1,6 +1,6 @@
 # zustand-di
 
-use react props to init zustand stores
+use react context to init zustand stores. dependency injection for zustand with react.
 
 A simplified patch of [`createContext`](https://github.com/pmndrs/zustand/blob/main/src/context.ts) from `zustand/context` that might be deprecated in the future. This patch removes `useStoreApi`.
 
@@ -10,7 +10,7 @@ A simplified patch of [`createContext`](https://github.com/pmndrs/zustand/blob/m
 ## Installation
 
 ```bash
-npm install zustand-di
+npm install zustand zustand-di
 ```
 
 ## Usage
