@@ -13,6 +13,26 @@ A simplified patch of [`createContext`](https://github.com/pmndrs/zustand/blob/m
 npm install zustand zustand-di
 ```
 
+### Peer Dependencies
+
+For `zustand-di@0.0.7` and higher
+
+```json
+{
+  "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+  "zustand": "^4.1.0"
+}
+```
+
+For `zustand-di@0.0.6` and below
+
+```json
+{
+  "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+  "zustand": "^4.0.0"
+}
+```
+
 ## Usage
 
 See zustand [docs](https://github.com/pmndrs/zustand/blob/main/docs/guides/initialize-state-with-props.md).
