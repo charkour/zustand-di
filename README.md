@@ -4,7 +4,7 @@ use react props to init zustand stores
 
 A simplified patch of [`createContext`](https://github.com/pmndrs/zustand/blob/main/src/context.ts) from `zustand/context` that might be deprecated in the future. This patch removes `useStoreApi`.
 
-- This is 612 B compared to the zustand one of 831 B.
+- This is 633 B compared to the zustand one of 831 B.
 - Opinionated: forces use of selector via typescript.
 
 ## Installation
