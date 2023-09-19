@@ -23,12 +23,9 @@ export const createContext = <Store extends StoreApi<unknown>>() => {
     children: React.ReactNode;
   }) => {
     const storeRef = useRef<Store>();
-    if (!storeRef.current) {
-      storeRef.current = createStore();
-    }
     return createElement(
       StoreContext.Provider,
-      { value: storeRef.current },
+      { value: (storeRef.current ||= createStore()) },
       children
     );
   };
