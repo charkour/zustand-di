@@ -1,6 +1,6 @@
 {
   "name": "zustand-di",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "initialize zustand stores with react context",
   "scripts": {
     "test": "vitest",
