@@ -12,7 +12,10 @@ type ExtractState<Store> = Store extends { getState: () => infer T }
   : never;
 
 // Inspired from: https://github.com/pmndrs/zustand/blob/main/src/context.ts
-export const createContext = <Store extends StoreApi<unknown>>() => {
+export const createContext = <
+  State,
+  Store extends StoreApi<State> = StoreApi<State>
+>() => {
   const StoreContext = reactCreateContext<Store | undefined>(undefined);
 
   const Provider = ({

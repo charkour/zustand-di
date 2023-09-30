@@ -2,12 +2,6 @@
   "name": "zustand-di",
   "version": "0.0.7",
   "description": "initialize zustand stores with react context",
-  "scripts": {
-    "test": "vitest",
-    "build": "tsup",
-    "dev": "vitest --watch",
-    "size": "size-limit"
-  },
   "keywords": [
     "zustand",
     "react",
@@ -26,13 +20,15 @@
     "type": "individual",
     "url": "https://github.com/sponsors/charkour"
   },
+  "license": "MIT",
+  "author": "Charles Kornoelje",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "author": "Charles Kornoelje",
-  "license": "MIT",
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "zustand": "^4.4.0"
+  "scripts": {
+    "build": "tsup",
+    "dev": "vitest --watch",
+    "size": "size-limit",
+    "test": "vitest"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "9.0.0",
@@ -46,6 +42,15 @@
     "typescript": "5.2.2",
     "vitest": "0.34.4",
     "zustand": "4.4.1"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "zustand": "^4.4.0"
   },
   "size-limit": [
     {
