@@ -14,6 +14,18 @@
     "context",
     "dependency-injection"
   ],
+  "homepage": "https://github.com/charkour/zustand-di",
+  "bugs": {
+    "url": "https://github.com/charkour/zustand-di/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charkour/zustand-di.git"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/charkour"
+  },
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "author": "Charles Kornoelje",
