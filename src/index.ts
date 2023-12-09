@@ -26,12 +26,9 @@ export const createContext = <
     children: React.ReactNode;
   }) => {
     const storeRef = useRef<Store>();
-    if (!storeRef.current) {
-      storeRef.current = createStore();
-    }
     return createElement(
       StoreContext.Provider,
-      { value: storeRef.current, children },
+      { value: storeRef.current ||= createStore(), children },
     );
   };
 
