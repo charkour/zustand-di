@@ -10,8 +10,8 @@
     "size-limit": "11.0.1"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "zustand": "^4.4.0"
+    "react": "*",
+    "zustand": "*"
   },
   "size-limit": [
     {
