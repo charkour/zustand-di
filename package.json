@@ -2,6 +2,7 @@
   "name": "zustand-di",
   "version": "0.0.8",
   "description": "initialize zustand stores with react context",
+  "type": "module",
   "keywords": [
     "zustand",
     "react",
@@ -31,17 +32,17 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "9.0.0",
-    "@testing-library/react": "14.0.0",
-    "@types/react": "18.2.21",
-    "@vitest/ui": "0.34.4",
-    "jsdom": "22.1.0",
+    "@size-limit/preset-small-lib": "11.0.1",
+    "@testing-library/react": "14.1.2",
+    "@types/react": "18.2.42",
+    "@vitest/ui": "1.0.2",
+    "jsdom": "23.0.1",
     "react": "18.2.0",
-    "size-limit": "9.0.0",
-    "tsup": "7.2.0",
-    "typescript": "5.2.2",
-    "vitest": "0.34.4",
-    "zustand": "4.4.1"
+    "size-limit": "11.0.1",
+    "tsup": "8.0.1",
+    "typescript": "5.3.3",
+    "vitest": "1.0.2",
+    "zustand": "4.4.7"
   },
   "files": [
     "dist",
