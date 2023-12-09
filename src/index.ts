@@ -18,19 +18,13 @@ export const createContext = <
 >() => {
   const StoreContext = reactCreateContext<Store | undefined>(undefined);
 
-  const Provider = ({
-    createStore,
-    children,
-  }: {
+  const Provider: React.FC<{
     createStore: () => Store;
     children: React.ReactNode;
-  }) => {
+  }> = ({ createStore, children }) => {
     const storeRef = useRef<Store>();
-    if (!storeRef.current) {
-      storeRef.current = createStore();
-    }
     return createElement(StoreContext.Provider, {
-      value: storeRef.current,
+      value: (storeRef.current ||= createStore()),
       children,
     });
   };
