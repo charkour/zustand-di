@@ -56,7 +56,8 @@
   "size-limit": [
     {
       "path": "dist/index.js",
-      "limit": "800 B"
+      "limit": "800 B",
+      "gzip": true
     }
   ]
 }
