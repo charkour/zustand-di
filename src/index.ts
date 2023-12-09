@@ -40,12 +40,12 @@ export const createContext = <
     equalityFn?: (left: StateSlice, right: StateSlice) => boolean
   ) => {
     const store = useContext(StoreContext);
-    if (!store) {
-      throw new Error(
-        "Seems like you have not used zustand provider as an ancestor."
-      );
+    if (store) {
+      return useStoreWithEqualityFn(store, selector, equalityFn);
     }
-    return useStoreWithEqualityFn(store, selector, equalityFn);
+    throw new Error(
+      "Seems like you have not used zustand provider as an ancestor."
+    );
   };
 
   return {
