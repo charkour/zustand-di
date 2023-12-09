@@ -29,11 +29,10 @@ export const createContext = <
     if (!storeRef.current) {
       storeRef.current = createStore();
     }
-    return createElement(
-      StoreContext.Provider,
-      { value: storeRef.current },
-      children
-    );
+    return createElement(StoreContext.Provider, {
+      value: storeRef.current,
+      children,
+    });
   };
 
   const useStore = <StateSlice = ExtractState<Store>>(
