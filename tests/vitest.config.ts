@@ -6,6 +6,6 @@ export default defineConfig({
     name: 'zustand-di',
     globals: true,
     environment: 'jsdom',
-    dir: 'tests',
+    dir: '.',
   },
 })
