@@ -27,21 +27,16 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "dev": "vitest --watch",
-    "size": "size-limit",
-    "test": "vitest"
+    "dev": "pnpm --filter tests dev",
+    "size": "pnpm --filter size size",
+    "test": "pnpm --filter tests test",
+    "test:ci": "pnpm --filter tests test:ci"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "11.0.1",
-    "@testing-library/react": "14.1.2",
     "@types/react": "18.2.42",
-    "@vitest/ui": "1.0.2",
-    "jsdom": "23.0.1",
     "react": "18.2.0",
-    "size-limit": "11.0.1",
     "tsup": "8.0.1",
     "typescript": "5.3.3",
-    "vitest": "1.0.2",
     "zustand": "4.4.7"
   },
   "files": [
@@ -52,12 +47,5 @@
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "zustand": "^4.4.0"
-  },
-  "size-limit": [
-    {
-      "path": "dist/index.js",
-      "limit": "800 B",
-      "gzip": true
-    }
-  ]
+  }
 }

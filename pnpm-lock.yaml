@@ -4,40 +4,52 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-devDependencies:
-  '@size-limit/preset-small-lib':
-    specifier: 11.0.1
-    version: 11.0.1(size-limit@11.0.1)
-  '@testing-library/react':
-    specifier: 14.1.2
-    version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
-  '@types/react':
-    specifier: 18.2.42
-    version: 18.2.42
-  '@vitest/ui':
-    specifier: 1.0.2
-    version: 1.0.2(vitest@1.0.2)
-  jsdom:
-    specifier: 23.0.1
-    version: 23.0.1
-  react:
-    specifier: 18.2.0
-    version: 18.2.0
-  size-limit:
-    specifier: 11.0.1
-    version: 11.0.1
-  tsup:
-    specifier: 8.0.1
-    version: 8.0.1(typescript@5.3.3)
-  typescript:
-    specifier: 5.3.3
-    version: 5.3.3
-  vitest:
-    specifier: 1.0.2
-    version: 1.0.2(@vitest/ui@1.0.2)(jsdom@23.0.1)
-  zustand:
-    specifier: 4.4.7
-    version: 4.4.7(@types/react@18.2.42)(react@18.2.0)
+importers:
+
+  .:
+    devDependencies:
+      '@types/react':
+        specifier: 18.2.42
+        version: 18.2.42
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      tsup:
+        specifier: 8.0.1
+        version: 8.0.1(typescript@5.3.3)
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+      zustand:
+        specifier: 4.4.7
+        version: 4.4.7(@types/react@18.2.42)(react@18.2.0)
+
+  size:
+    devDependencies:
+      '@size-limit/preset-small-lib':
+        specifier: 11.0.1
+        version: 11.0.1(size-limit@11.0.1)
+      size-limit:
+        specifier: 11.0.1
+        version: 11.0.1
+
+  tests:
+    devDependencies:
+      '@testing-library/react':
+        specifier: 14.1.2
+        version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
+      '@vitest/ui':
+        specifier: 1.0.2
+        version: 1.0.2(vitest@1.0.2)
+      jsdom:
+        specifier: 23.0.1
+        version: 23.0.1
+      vitest:
+        specifier: 1.0.2
+        version: 1.0.2(@vitest/ui@1.0.2)(jsdom@23.0.1)
+      zustand:
+        specifier: 4.4.7
+        version: 4.4.7(@types/react@18.2.42)(react@18.2.0)
 
 packages:
 
@@ -1441,7 +1453,7 @@ packages:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
-      ws: 8.14.2
+      ws: 8.15.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -2421,8 +2433,8 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /ws@8.14.2:
-    resolution: {integrity: sha512-wEBG1ftX4jcglPxgFCMJmZ2PLtSbJ2Peg6TmpJFTbe9GZYOQCDPdMYu/Tm0/bGZkw8paZnJY45J4K2PZrLYq8g==}
+  /ws@8.15.0:
+    resolution: {integrity: sha512-H/Z3H55mrcrgjFwI+5jKavgXvwQLtfPCUEp6pi35VhoB0pfcHnSoyuTzkBEZpzq49g1193CUEwIvmsjcotenYw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
