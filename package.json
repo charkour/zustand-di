@@ -1,8 +1,7 @@
 {
   "name": "zustand-di",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "description": "initialize zustand stores with react context",
-  "type": "module",
   "keywords": [
     "zustand",
     "react",
@@ -23,8 +22,21 @@
   },
   "license": "MIT",
   "author": "Charles Kornoelje",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "pnpm --filter tests dev",
@@ -39,10 +51,6 @@
     "typescript": "5.3.3",
     "zustand": "4.4.7"
   },
-  "files": [
-    "dist",
-    "package.json"
-  ],
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "zustand": "^4.4.0"
