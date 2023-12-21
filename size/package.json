@@ -9,16 +9,15 @@
     "@size-limit/preset-small-lib": "11.0.1",
     "size-limit": "11.0.1"
   },
+  "peerDependencies": {
+    "react": "*",
+    "zustand": "*"
+  },
   "size-limit": [
     {
       "limit": "400 B",
       "path": "../dist/index.js",
-      "gzip": true,
-      "ignore": [
-        "react",
-        "react-dom",
-        "zustand"
-      ]
+      "gzip": true
     }
   ]
 }
