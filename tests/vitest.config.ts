@@ -11,7 +11,7 @@ export default defineConfig({
       include: ['**/src/**/*.{ts,tsx}'],
       allowExternal: true,
       reportOnFailure: true,
-      reporter: ['text', 'json-summary', 'json'],
+      reporter: ['text', 'json-summary', 'json', 'html'],
     },
   },
 })
