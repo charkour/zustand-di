@@ -7,5 +7,11 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     dir: '.',
+    coverage: {
+      include: ['**/src/**/*.{ts,tsx}'],
+      allowExternal: true,
+      reportOnFailure: true,
+      reporter: ['text', 'json-summary', 'json'],
+    },
   },
 })
