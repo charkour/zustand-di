@@ -9,7 +9,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x, 20.x]
+        node-version: [16.x, 20.x]
+        zustand: [latest, 4.2.0, 4.0.0, 5.0.0-alpha.6]
 
     steps:
       - uses: actions/checkout@v3
@@ -42,6 +43,9 @@ jobs:
 
       - name: Install Dependencies
         run: pnpm install
+
+      - name: Install Zustand ${{ matrix.zustand }}
+        run: pnpm add zustand@${{ matrix.zustand }} -w
 
       - name: Build
         run: pnpm run build
