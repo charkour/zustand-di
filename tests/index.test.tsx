@@ -23,13 +23,12 @@ type CounterState = {
 };
 
 it("creates and uses context store", async () => {
-  const { Provider, useStore } = createContext<CounterState>();
-
   const createStore = () =>
-    create<CounterState>((set) => ({
+    create<CounterState>()((set) => ({
       count: 0,
       inc: () => set((state) => ({ count: state.count + 1 })),
     }));
+  const { Provider, useStore } = createContext<CounterState>(createStore);
 
   function Counter() {
     const { count, inc } = useStore((state) => state);
@@ -39,7 +38,7 @@ it("creates and uses context store", async () => {
 
   const { findByText } = render(
     <>
-      <Provider createStore={createStore}>
+      <Provider>
         <Counter />
       </Provider>
     </>
@@ -49,13 +48,12 @@ it("creates and uses context store", async () => {
 });
 
 it("uses context store with selectors", async () => {
-  const { Provider, useStore } = createContext<CounterState>();
-
   const createStore = () =>
-    create<CounterState>((set) => ({
+    create<CounterState>()((set) => ({
       count: 0,
       inc: () => set((state) => ({ count: state.count + 1 })),
     }));
+  const { Provider, useStore } = createContext<CounterState>(createStore);
 
   function Counter() {
     const count = useStore((state) => state.count);
@@ -66,7 +64,7 @@ it("uses context store with selectors", async () => {
 
   const { findByText } = render(
     <>
-      <Provider createStore={createStore}>
+      <Provider>
         <Counter />
       </Provider>
     </>
@@ -94,7 +92,13 @@ it("throws error when not using provider", async () => {
     }
   }
 
-  const { useStore } = createContext<StoreApi<CounterState>>();
+  const createStore = () =>
+    create<CounterState>()((set) => ({
+      count: 0,
+      inc: () => set((state) => ({ count: state.count + 1 })),
+    }));
+
+  const { useStore } = createContext<CounterState>(createStore);
   function Component() {
     useStore((state) => state);
     return <div>no error</div>;
@@ -111,7 +115,13 @@ it("throws error when not using provider", async () => {
 });
 
 it("useCallback with useStore infers types correctly", async () => {
-  const { useStore } = createContext<CounterState>();
+  const createStore = () =>
+    create<CounterState>()((set) => ({
+      count: 0,
+      inc: () => set((state) => ({ count: state.count + 1 })),
+    }));
+
+  const { useStore } = createContext<CounterState>(createStore);
   function _Counter() {
     const _x = useStore(useCallback((state) => state.count, []));
     expectAreTypesEqual<typeof _x, number>().toBe(true);

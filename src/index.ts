@@ -15,21 +15,20 @@ type ExtractState<Store> = Store extends { getState: () => infer T }
 export const createContext = <
   State,
   Store extends StoreApi<State> = StoreApi<State>
->() => {
+>(createStore: () => Store) => {
   const StoreContext = reactCreateContext<Store | undefined>(undefined);
 
   type Provider = React.FC<
     {
-      createStore: () => Store;
       children: React.ReactNode;
     } & Record<string, unknown>
   >;
 
-  const Provider: Provider = ({ createStore, ...rest }) => {
+  const Provider: Provider = (props) => {
     const storeRef = useRef<Store>();
     return createElement(StoreContext.Provider, {
       value: (storeRef.current ||= createStore()),
-      ...rest,
+      ...props,
     });
   };
 
