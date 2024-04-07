@@ -5,7 +5,7 @@ export default defineConfig({
   test: {
     name: 'zustand-di',
     globals: true,
-    environment: 'jsdom',
+    environment: 'happy-dom',
     dir: '.',
     coverage: {
       include: ['**/src/**/*.{ts,tsx}'],
