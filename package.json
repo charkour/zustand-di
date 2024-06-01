@@ -1,6 +1,7 @@
 {
   "name": "zustand-di",
   "version": "0.0.14",
+  "private": false,
   "description": "initialize zustand stores with react context",
   "keywords": [
     "zustand",
