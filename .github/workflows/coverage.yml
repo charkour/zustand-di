@@ -14,16 +14,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: pnpm/action-setup@v2
+    - uses: pnpm/action-setup@v4
       with:
         version: 8
-    - name: 'Install Node'
+        run_install: false
+    - name: Install Node
       uses: actions/setup-node@v4
-    - name: 'Install Deps'
+    - name: Install Deps
       run: pnpm install
-    - name: 'Test'
+    - name: Test
       run: pnpm test
-    - name: 'Report Coverage'
+    - name: Report Coverage
       # Set if: always() to also generate the report if tests are failing
       # Only works if you set `reportOnFailure: true` in your vite config as specified above
       if: always()

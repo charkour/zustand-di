@@ -1,6 +1,6 @@
 import {
   Component as ClassComponent,
-  ReactNode,
+  type ReactNode,
   StrictMode,
   useCallback,
   useEffect,
@@ -89,7 +89,7 @@ it("throws error when not using provider", async () => {
     static getDerivedStateFromError() {
       return { hasError: true };
     }
-    render() {
+    override render() {
       return this.state.hasError ? <div>errored</div> : this.props.children;
     }
   }
