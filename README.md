@@ -12,6 +12,10 @@ dependency injection for [zustand](https://github.com/pmndrs/zustand) with [reac
 npm install react zustand zustand-di
 ```
 
+> Note: `zustand-di` requires `react` and `zustand` as peer dependencies.
+> For `zustand@4.1.0` and higher, you need `zustand-di@0.0.7` or higher.
+> For `zustand@~4.0.0`, you need `zustand-di@0.0.6` or lower.
+
 ## Usage
 
 ```tsx
@@ -37,8 +41,12 @@ const createStore = (initialState: { count: number }) =>
 // 3. Use the store in a child component
 function Counter() {
   const { count, inc } = useStore((state) => state);
-  useEffect(inc, [inc]);
-  return <div>count: {count * 1}</div>;
+  return (
+    <>
+      <button onClick={inc}>increment</button>
+      <div>count: {count}</div>
+    <>
+  );
 }
 
 // 4. Use the store in the app and pass in the store creator
@@ -63,33 +71,11 @@ This package was originally inspired by [`createContext`](https://github.com/pmn
 
 For a detailed explanation, check out TkDoDo's [blog post](https://tkdodo.eu/blog/zustand-and-react-context).
 
-### Why is this useful?
+### Why is Dependency Injection useful within React?
 
 - **Dependency Injection**: You can pass in props to the store creator.
   - This is useful for testing and [initializing the store with props](https://github.com/pmndrs/zustand/blob/main/docs/guides/initialize-state-with-props.md).
   - You can also use this to create multiple instances of the same store with different props.
-- **Type Safety**: You can define the store type and use it in the `useStore` hook.
-- **Simplified API**: The API is simplified and easier to use than the original `zustand/context`.
-
-## Peer Dependencies
-
-For `zustand-di@0.0.7` and higher
-
-```json
-{
-  "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-  "zustand": "^4.1.0"
-}
-```
-
-For `zustand-di@0.0.6` and below
-
-```json
-{
-  "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-  "zustand": "^4.0.0"
-}
-```
 
 ## API
 
