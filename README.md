@@ -127,7 +127,6 @@ If you have default props, you can pass them to the `Provider` component.
 
 The `useStore` hook is used to access the store in a child component. Be sure that the child component is wrapped in the `Provider` component.
 
-
 ```tsx
 function MyComponent = () => {
   const storeState = useStore((state) => state);
