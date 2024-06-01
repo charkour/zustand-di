@@ -73,7 +73,7 @@ For a detailed explanation, check out TkDoDo's [blog post](https://tkdodo.eu/blo
 
 ### Why is Dependency Injection useful within React?
 
-- **Dependency Injection**: You can pass in props to the store creator.
+- You can pass in props to the store creator.
   - This is useful for testing and [initializing the store with props](https://github.com/pmndrs/zustand/blob/main/docs/guides/initialize-state-with-props.md).
   - You can also use this to create multiple instances of the same store with different props.
 
