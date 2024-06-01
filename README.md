@@ -2,7 +2,6 @@
 
 use react context to init zustand stores. dependency injection for zustand with react.
 
-
 [![Build Size](https://img.shields.io/bundlephobia/minzip/zustand-di?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=zustand-di)
 [![Version](https://img.shields.io/npm/v/zustand-di?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/zustand-di)
 [![Downloads](https://img.shields.io/npm/dt/zustand-di?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/zustand-di)
