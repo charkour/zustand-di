@@ -23,7 +23,7 @@ type CounterState = {
 };
 
 it("creates and uses context store", async () => {
-  const { Provider, useStore } = createContext<CounterState>();
+  const [Provider, useStore] = createContext<CounterState>();
 
   const createStore = () =>
     create<CounterState>((set) => ({
@@ -49,7 +49,7 @@ it("creates and uses context store", async () => {
 });
 
 it("uses context store with selectors", async () => {
-  const { Provider, useStore } = createContext<CounterState>();
+  const [Provider, useStore] = createContext<CounterState>();
 
   const createStore = () =>
     create<CounterState>((set) => ({
@@ -94,7 +94,7 @@ it("throws error when not using provider", async () => {
     }
   }
 
-  const { useStore } = createContext<StoreApi<CounterState>>();
+  const [, useStore] = createContext<StoreApi<CounterState>>();
   function Component() {
     useStore((state) => state);
     return <div>no error</div>;
@@ -111,7 +111,7 @@ it("throws error when not using provider", async () => {
 });
 
 it("useCallback with useStore infers types correctly", async () => {
-  const { useStore } = createContext<CounterState>();
+  const [, useStore] = createContext<CounterState>();
   function _Counter() {
     const _x = useStore(useCallback((state) => state.count, []));
     expectAreTypesEqual<typeof _x, number>().toBe(true);
