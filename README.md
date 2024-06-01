@@ -13,7 +13,9 @@ npm install react zustand zustand-di
 ```
 
 > Note: `zustand-di` requires `react` and `zustand` as peer dependencies.
+
 > For `zustand@4.1.0` and higher, you need `zustand-di@0.0.7` or higher.
+
 > For `zustand@~4.0.0`, you need `zustand-di@0.0.6` or lower.
 
 ## Usage
