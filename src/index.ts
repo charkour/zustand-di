@@ -7,10 +7,6 @@ import {
 import type { StoreApi } from "zustand";
 import { useStoreWithEqualityFn } from "zustand/traditional";
 
-type ExtractState<Store> = Store extends { getState: () => infer T }
-  ? T
-  : never;
-
 // Inspired from: https://github.com/pmndrs/zustand/blob/main/src/context.ts
 export const createContext = <
   State,
@@ -46,8 +42,9 @@ export const createContext = <
     );
   };
 
-  return {
-    Provider,
-    useStore,
-  };
+  return [Provider, useStore] as const;
 };
+
+type ExtractState<Store> = Store extends { getState: () => infer T }
+  ? T
+  : never;
