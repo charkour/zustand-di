@@ -61,7 +61,17 @@ This package was originally inspired by [`createContext`](https://github.com/pmn
 - Uses modern typescript features to simplify the code and reduce bundle size.
 - Returns an array of the Provider and `useStore` hook to reduce bundle size and improve DX.
 
-### Peer Dependencies
+For a detailed explanation, check out TkDoDo's [blog post](https://tkdodo.eu/blog/zustand-and-react-context).
+
+### Why is this useful?
+
+- **Dependency Injection**: You can pass in props to the store creator.
+  - This is useful for testing and [initializing the store with props](https://github.com/pmndrs/zustand/blob/main/docs/guides/initialize-state-with-props.md).
+  - You can also use this to create multiple instances of the same store with different props.
+- **Type Safety**: You can define the store type and use it in the `useStore` hook.
+- **Simplified API**: The API is simplified and easier to use than the original `zustand/context`.
+
+## Peer Dependencies
 
 For `zustand-di@0.0.7` and higher
 
