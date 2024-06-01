@@ -50,7 +50,7 @@ function Counter() {
 }
 
 // 4. Use the store in the app and pass in the store creator
-const myInitialState = { count: 0 };
+const myInitialState = { count: 5 };
 
 function App() {
   return (
