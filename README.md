@@ -1,6 +1,6 @@
 # zustand-di
 
-dependency injection for [zustand](https://github.com/pmndrs/zustand) with [react context](https://react.dev/learn/passing-data-deeply-with-context). initialize zustand stores with props.
+dependency injection for [zustand](https://github.com/pmndrs/zustand) with [react context](https://react.dev/learn/passing-data-deeply-with-context). initialize zustand stores with component props.
 
 [![Build Size](https://img.shields.io/bundlephobia/minzip/zustand-di?label=bundle%20size&style=flat&colorA=000000&colorB=000000)](https://bundlephobia.com/result?p=zustand-di)
 [![Version](https://img.shields.io/npm/v/zustand-di?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/zustand-di)
